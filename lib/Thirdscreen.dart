@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'order_model.dart';
 import 'second_screen.dart';
-
 class ThirdScreen extends StatelessWidget {
   final inputbox item;
   final int index;
-
   ThirdScreen({required this.item, required this.index});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +68,6 @@ class ThirdScreen extends StatelessWidget {
                   ? Colors.green
                   : Colors.orange,
             ),
-
             SizedBox(height: 20),
             Center(
               child: ElevatedButton.icon(

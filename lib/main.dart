@@ -14,16 +14,13 @@ class FirstScreen extends StatefulWidget {
   @override
   _FirstScreenState createState() => _FirstScreenState();
 }
-
 class _FirstScreenState extends State<FirstScreen> {
   List<inputbox> items = [];
-
   @override
   void initState() {
     super.initState();
     _loadItems();
   }
-
   Future<void> _loadItems() async {
     final prefs = await SharedPreferences.getInstance();
     final jsonString = prefs.getString('research_items');
@@ -34,13 +31,11 @@ class _FirstScreenState extends State<FirstScreen> {
       });
     }
   }
-
   Future<void> _saveItems() async {
     final prefs = await SharedPreferences.getInstance();
     final jsonList = items.map((e) => e.toJson()).toList();
     await prefs.setString('research_items', json.encode(jsonList));
   }
-
   void _addOrUpdateItem(inputbox item, {int? index}) {
     setState(() {
       if (index != null && index >= 0) {
@@ -51,14 +46,12 @@ class _FirstScreenState extends State<FirstScreen> {
       _saveItems();
     });
   }
-
   void _deleteItem(int index) {
     setState(() {
       items.removeAt(index);
       _saveItems();
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

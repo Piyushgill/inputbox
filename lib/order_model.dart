@@ -5,7 +5,6 @@ class inputbox {
   String Date;
   String status;
   String? imagePath;
-
   inputbox({
     required this.title,
     required this.shortdescription,
@@ -14,7 +13,6 @@ class inputbox {
     required this.status,
     this.imagePath,
   });
-
   Map<String, dynamic> toJson() => {
     'title': title,
     'shortdescription': shortdescription,
@@ -23,7 +21,6 @@ class inputbox {
     'status': status,
     'imagePath': imagePath,
   };
-
   factory inputbox.fromJson(Map<String, dynamic> json) => inputbox(
     title: json['title'],
     shortdescription: json['shortdescription'],

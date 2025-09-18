@@ -2,29 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'order_model.dart';
-
 class SecondScreen extends StatefulWidget {
   final inputbox? existingInput;
   final int? index;
-
   SecondScreen({this.existingInput, this.index});
-
   @override
   _SecondScreenState createState() => _SecondScreenState();
 }
-
 class _SecondScreenState extends State<SecondScreen> {
   final _formKey = GlobalKey<FormState>();
-
   final _titleController = TextEditingController();
   final _shortDescController = TextEditingController();
   final _longDescController = TextEditingController();
   final _dateController = TextEditingController();
   String _statusValue = 'In Progress';
-
   File? _selectedImage;
   final ImagePicker _picker = ImagePicker();
-
   @override
   void initState() {
     super.initState();
@@ -85,7 +78,6 @@ class _SecondScreenState extends State<SecondScreen> {
       ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -152,8 +144,6 @@ class _SecondScreenState extends State<SecondScreen> {
                 icon: Icons.description,
                 maxLines: 4,
               ),
-
-              // Date Field
               _buildInputField(
                 label: "Date",
                 controller: _dateController,
@@ -172,8 +162,6 @@ class _SecondScreenState extends State<SecondScreen> {
                 },
                 icon: Icons.calendar_today,
               ),
-
-              // Status Dropdown
               Card(
                 margin: EdgeInsets.symmetric(vertical: 8),
                 color: Colors.white,
@@ -197,8 +185,6 @@ class _SecondScreenState extends State<SecondScreen> {
                   },
                 ),
               ),
-
-              // Image Picker
               Card(
                 margin: EdgeInsets.symmetric(vertical: 8),
                 color: Colors.white,
@@ -265,10 +251,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   ),
                 ),
               ),
-
               SizedBox(height: 20),
-
-              // Save/Update Button
               ElevatedButton.icon(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {

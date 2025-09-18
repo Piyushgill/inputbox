@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class InputBox extends StatelessWidget {
   final String label;
   final TextEditingController controller;
@@ -10,7 +9,6 @@ class InputBox extends StatelessWidget {
   final TextInputType keyboardType;
   final IconData? prefixIcon;
   final bool obscureText;
-
   const InputBox({
     Key? key,
     required this.label,
@@ -23,12 +21,11 @@ class InputBox extends StatelessWidget {
     this.prefixIcon,
     this.obscureText = false,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      maxLines: obscureText ? 1 : maxLines, // always 1 if password
+      maxLines: obscureText ? 1 : maxLines,
       readOnly: readOnly,
       onTap: onTap,
       validator: validator,
