@@ -31,7 +31,6 @@ class ThirdScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// IMAGE
             item.imagePath != null && File(item.imagePath!).existsSync()
                 ? ClipRRect(
               borderRadius: BorderRadius.circular(8),
@@ -48,18 +47,12 @@ class ThirdScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 16),
-
-            /// TITLE
             Text("Title :-", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Text(item.title, style: TextStyle(fontSize: 16)),
             SizedBox(height: 12),
-
-            /// SHORT DESCRIPTION
             Text("Short Description :-", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Text(item.shortdescription, style: TextStyle(fontSize: 16)),
             SizedBox(height: 12),
-
-            /// LONG DESCRIPTION
             Text("Long Description :-", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Html(
               data: item.longdescription,
@@ -68,13 +61,9 @@ class ThirdScreen extends StatelessWidget {
               },
             ),
             SizedBox(height: 12),
-
-            /// DATE
             Text("Date :-", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Text(item.Date, style: TextStyle(fontSize: 16)),
             SizedBox(height: 12),
-
-            /// STATUS
             Text("Status :-", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             Chip(
               label: Text(item.status, style: TextStyle(color: Colors.white)),
@@ -84,8 +73,6 @@ class ThirdScreen extends StatelessWidget {
             ),
 
             SizedBox(height: 20),
-
-            /// UPDATE BUTTON
             Center(
               child: ElevatedButton.icon(
                 onPressed: () async {
